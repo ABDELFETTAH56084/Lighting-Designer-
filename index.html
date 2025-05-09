@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>موقع الزخرفة</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      direction: rtl;
+      padding: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 18px;
+      margin: 10px;
+    }
+    #result {
+      font-size: 22px;
+      color: green;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>موقع زخرفة الأسماء</h1>
+  <p>أدخل اسمك وسيتم زخرفته</p>
+  
+  <input type="text" id="name" placeholder="أدخل اسمك">
+  <button onclick="decorate()">زخرف</button>
+
+  <div id="result"></div>
+
+  <script>
+    function decorate() {
+      const name = document.getElementById('name').value;
+      if (name === "") {
+        document.getElementById('result').innerText = "الرجاء إدخال اسم";
+        return;
+      }
+
+      // زخرفة بسيطة (يمكنك تطويرها)
+      const patterns = [
+        `★ ${name} ★`,
+        `• ${name} •`,
+        `♡ ${name} ♡`,
+        `-=${name}=-`,
+        `꧁ ${name} ꧂`,
+        `『 ${name} 』`,
+        `༺ ${name} ༻`
+      ];
+
+      // اختيار زخرفة عشوائية
+      const result = patterns[Math.floor(Math.random() * patterns.length)];
+      document.getElementById('result').innerText = result;
+    }
+  </script>
+</body>
+</html>
